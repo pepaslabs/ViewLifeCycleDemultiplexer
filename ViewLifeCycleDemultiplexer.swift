@@ -9,7 +9,7 @@
 
 import UIKit
 
-protocol ModalViewLifeCycleProtocol
+protocol ModalViewLifeCycleProtocol: class
 {
     func viewWillGetPresented(animated: Bool)
     func viewDidGetPresented(animated: Bool)
@@ -24,7 +24,7 @@ protocol ModalViewLifeCycleProtocol
     func viewDidReappearFromBeneathModal(animated: Bool)
 }
 
-protocol NavigationViewLifeCycleProtocol
+protocol NavigationViewLifeCycleProtocol: class
 {
     func viewWillGetPushed(animated: Bool)
     func viewDidGetPushed(animated: Bool)
@@ -41,8 +41,8 @@ protocol NavigationViewLifeCycleProtocol
 
 class ViewLifeCycleDemultiplexer
 {
-    var modalDelegate: ModalViewLifeCycleProtocol?
-    var navDelegate: NavigationViewLifeCycleProtocol?
+    weak var modalDelegate: ModalViewLifeCycleProtocol?
+    weak var navDelegate: NavigationViewLifeCycleProtocol?
     
     convenience init()
     {
