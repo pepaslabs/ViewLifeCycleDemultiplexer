@@ -3,7 +3,7 @@ Break up UIViewController's view lifecycle methods into more specific cases.
 
 ## Example usage
 
-Here is a minimal UIViewController implementation which uses ViewLifeCycleDemultiplexer:
+Here is a minimal `UIViewController` implementation which uses a `ViewLifeCycleDemultiplexer`:
 
 ```swift
 import UIKit
